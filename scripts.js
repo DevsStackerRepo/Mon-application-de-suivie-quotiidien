@@ -13,14 +13,19 @@ function inputLength(){
 //     input.value="";
 //     }
 
-    function createElement(){
-        let li = document.createElement("li");
-        let deleteButton = document.createElement("button");
-        deleteButton.innerText = `supprimer ${input.value}`;
-        li.innerHTML = input.value;
-        li.appendChild(deleteButton);
+
+function createElement(){
+    let li = document.createElement("li");
+    // let deleteButton = document.createElement("button");
+    //     deleteButton.innerHTML =  `[x] ${input.value}`;
+        li.innerHTML = input.value + " <span onClick=del(this)>X</span>";
+        // li.appendChild(deleteButton);
         showTodo.appendChild(li);
         input.value="";
+        }
+
+        function del(element){
+            element.parentElement.remove();
         }
     
 
