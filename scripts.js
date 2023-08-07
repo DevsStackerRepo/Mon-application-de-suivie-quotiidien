@@ -16,16 +16,17 @@ function inputLength(){
 
 function createElement(){
     let li = document.createElement("li");
-    // let deleteButton = document.createElement("button");
-    //     deleteButton.innerHTML =  `[x] ${input.value}`;
-        li.innerHTML = input.value + " <span onClick=del(this)>X</span>";
-        // li.appendChild(deleteButton);
+    let deleteButton = document.createElement("button");
+        deleteButton.innerHTML =  `supprimer ${input.value}`;
+        deleteButton.onclick = () => del(li);
+        li.innerHTML = input.value;
+        li.appendChild(deleteButton);
         showTodo.appendChild(li);
         input.value="";
         }
 
         function del(element){
-            element.parentElement.remove();
+            element.remove();
         }
     
 
