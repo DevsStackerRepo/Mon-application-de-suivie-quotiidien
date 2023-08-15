@@ -19,10 +19,11 @@ function createElement() {
 
   let deleteButton = document.createElement("button");
   deleteButton.innerHTML = `supprimer ${input.value}`;
-  deleteButton.onclick = () => del(li);
+  deleteButton.onclick = () => supprimerElement(li);
 
   let editButton = document.createElement("button");
   editButton.innerHTML = `editer ${input.value}`;
+  editButton.onclick = () => editerElement(li);
 
   li.appendChild(deleteButton);
   li.appendChild(editButton);
@@ -31,7 +32,15 @@ function createElement() {
   input.value = "";
 }
 
-function del(element) {
+function editerElement(element) {
+  let editTask = `<input type="text" value="${element.value}" />
+        <button>Enregistrer</button>
+        <button>Modifier</button>
+    `;
+  return editTask;
+}
+
+function supprimerElement(element) {
   element.remove();
 }
 
