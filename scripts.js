@@ -33,11 +33,11 @@ function createElement() {
 }
 
 function editerElement(element) {
-  let editTask = `<input type="text" value="${element.value}" />
-        <button>Enregistrer</button>
-        <button>Modifier</button>
-    `;
-  return editTask;
+  let editValue = prompt(
+    "editer l'element selectionner",
+    element.firstChild.nodeValue
+  );
+  element.firstChild.nodeValue = editValue;
 }
 
 function supprimerElement(element) {
